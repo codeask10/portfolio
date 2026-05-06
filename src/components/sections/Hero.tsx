@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, useMotionValue, useTransform, useSpring, type Variants } from "framer-motion";
 import profileImg from "@/assets/SaquibProfile.jpg";
 import { personalInfo } from "@/data/portfolioConfig";
+import { useContactModal } from "@/hooks/useContactModal";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -42,6 +43,7 @@ const stats = [
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { open: openContact } = useContactModal();
 
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -134,9 +136,12 @@ export default function Hero() {
             <a href="#experience" className="hero-cta-primary px-6 py-2.5 rounded-full text-white text-sm font-medium">
               View My Work
             </a>
-            <a href={personalInfo.resumeUrl} download className="glass-btn px-6 py-2.5 rounded-full text-foreground text-sm font-medium">
-              Download Resume
-            </a>
+            <button
+              onClick={openContact}
+              className="glass-btn px-6 py-2.5 rounded-full text-foreground text-sm font-medium"
+            >
+              Get In Touch
+            </button>
           </motion.div>
 
           {/* Social */}
@@ -225,17 +230,44 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.6 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 select-none"
       >
-        <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-4 h-7 rounded-full flex items-start justify-center p-1"
-          style={{ border: "1.5px solid var(--border-subtle)" }}
+        <span
+          className="text-[9px] font-medium tracking-[0.3em] uppercase"
+          style={{ color: "var(--muted)", opacity: 0.45 }}
         >
-          <motion.div className="w-0.5 h-1.5 rounded-full bg-muted" />
-        </motion.div>
+          Scroll
+        </span>
+        <div className="flex flex-col items-center" style={{ gap: "2px" }}>
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              animate={{ opacity: [0.12, 0.85, 0.12] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.22,
+                repeatDelay: 0.2,
+              }}
+            >
+              <svg
+                width="12"
+                height="7"
+                viewBox="0 0 12 7"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ color: "var(--fg)", display: "block" }}
+              >
+                <path d="M1 1l5 5 5-5" />
+              </svg>
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
     </section>
   );

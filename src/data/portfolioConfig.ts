@@ -10,7 +10,7 @@ export const personalInfo = {
   resumeUrl: "/resume.pdf",
   social: {
     github: "https://github.com/codeask10",
-    linkedin: "https://linkedin.com/in/yourusername",
+    linkedin: "https://linkedin.com/in/annajmussaquib-khan-22a27918b",
   },
 };
 
