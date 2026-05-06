@@ -1,40 +1,34 @@
 export const personalInfo = {
-  name: "Your Name",
+  name: "Annajmussaquib Khan",
   role: "Frontend Engineer (SDE-1)",
-  tagline: "Building fast, scalable, and pixel-perfect web experiences",
+  tagline: "Building scalable, high-performance multi-tenant web applications",
   description:
-    "Frontend Engineer with 1.5+ years of experience building high-performance e-commerce platforms, multi-tenant theme systems, and config-driven UIs. Passionate about creating seamless user experiences that drive business growth.",
-  email: "your.email@example.com",
-  phone: "+91-XXXXXXXXXX",
-  location: "India",
+    "Frontend Engineer with 1.5+ years of experience building production-grade multi-tenant e-commerce platforms serving 37+ storefronts and 2M+ users. Specialized in React, Next.js, performance optimization, and reusable UI architecture.",
+  email: "annajmussaquib123@gmail.com",
+  phone: "+91 7880539033",
+  location: "Bengaluru, India",
   resumeUrl: "/resume.pdf",
   social: {
-    github: "https://github.com/yourusername",
+    github: "https://github.com/codeask10",
     linkedin: "https://linkedin.com/in/yourusername",
-    twitter: "https://twitter.com/yourusername",
   },
 };
 
 export const aboutData = {
   summary: [
-    "1.5+ years of hands-on experience as a Frontend Engineer at Zopping, building production-grade e-commerce platforms serving thousands of merchants.",
-    "Completed an intensive internship at MountBlue Technologies, mastering full-stack fundamentals and modern development workflows.",
-    "Specialized in React/Next.js ecosystems, performance optimization, and building scalable multi-tenant architectures.",
+    "Frontend Engineer at Zopping working on a multi-tenant e-commerce platform powering 37+ storefronts and 2M+ users.",
+    "Built 3 production-grade themes end-to-end with reusable architecture and dynamic theming.",
+    "Strong in performance optimization, debugging production issues, and scalable UI systems.",
   ],
   highlights: [
     { label: "Experience", value: "1.5+ Years" },
-    { label: "Projects Shipped", value: "15+" },
+    { label: "Storefronts", value: "37+" },
+    { label: "Users Served", value: "2M+" },
     { label: "Themes Built", value: "3" },
-    { label: "Platform", value: "E-Commerce" },
   ],
 };
 
-export type SkillCategory = {
-  title: string;
-  skills: string[];
-};
-
-export const skillsData: SkillCategory[] = [
+export const skillsData = [
   {
     title: "Frontend",
     skills: ["React.js", "Next.js", "JavaScript (ES6+)", "TypeScript"],
@@ -44,12 +38,16 @@ export const skillsData: SkillCategory[] = [
     skills: ["Tailwind CSS", "styled-components", "CSS Grid", "Flexbox"],
   },
   {
+    title: "State & APIs",
+    skills: ["Redux", "Context API", "REST APIs", "Axios"],
+  },
+  {
     title: "Performance",
     skills: [
-      "Code Splitting",
       "Lazy Loading",
+      "Code Splitting",
       "Intersection Observer",
-      "Web Vitals",
+      "Web Optimization",
     ],
   },
   {
@@ -57,32 +55,20 @@ export const skillsData: SkillCategory[] = [
     skills: [
       "Multi-Tenant Systems",
       "Config-driven UI",
+      "Reusable Components",
       "E-Commerce Platforms",
-      "Component Libraries",
     ],
   },
   {
-    title: "Tools & Others",
-    skills: [
-      "REST APIs",
-      "Axios",
-      "Git",
-      "Jest",
-      "SEO",
-      "Accessibility",
-      "Figma",
-    ],
+    title: "Tools",
+    skills: ["Git", "GitHub", "GitLab", "Chrome DevTools", "Figma"],
   },
 ];
 
 export type ExperienceProject = {
   title: string;
   role: string;
-  category:
-    | "Theme Development"
-    | "Feature Enhancement"
-    | "Performance Optimization"
-    | "Support / Bug Fix";
+  category: string;
   description: string;
   techStack: string[];
   highlights: string[];
@@ -90,218 +76,188 @@ export type ExperienceProject = {
   demoUrl?: string;
 };
 
-export const experienceData = {
+export const experienceData: {
+  company: string;
+  role: string;
+  duration: string;
+  description: string;
+  projects: ExperienceProject[];
+} = {
   company: "Zopping",
   role: "Frontend Engineer (SDE-1)",
-  duration: "2024 – Present",
+  duration: "Dec 2024 – Present",
   description:
-    "Building and maintaining e-commerce storefront themes and features for a multi-tenant SaaS platform used by thousands of merchants.",
+    "Working on a scalable multi-tenant e-commerce platform supporting 37+ storefronts and 2M+ users.",
   projects: [
     {
-      title: "NutriHarvest Theme",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Theme Development" as const,
+      title: "Zavora Theme",
+      role: "Frontend Engineer",
+      category: "Theme Development",
       description:
-        "Built a complete e-commerce storefront theme from scratch, featuring a modern design system with reusable components, responsive layouts, and optimized product showcases.",
-      techStack: ["React.js", "Tailwind CSS", "REST APIs", "Config-driven UI"],
+        "Built a production-grade e-commerce theme from Figma to deployment with reusable components and dynamic layouts.",
+      techStack: ["React.js", "Next.js", "styled-components", "REST APIs"],
       highlights: [
-        "Designed and implemented 20+ reusable components",
-        "Built responsive product grid with advanced filtering",
-        "Implemented lazy loading for optimal performance",
+        "Developed 60+ reusable components",
+        "Implemented dynamic product grid with filters",
+        "Handled large dataset rendering efficiently",
+        "Ensured responsive and cross-browser UI",
       ],
     },
     {
-      title: "Zavora Theme",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Theme Development" as const,
+      title: "NutriHarvest Theme",
+      role: "Frontend Engineer",
+      category: "Theme Development",
       description:
-        "Developed a premium, conversion-focused storefront theme with advanced product display, mega menus, and seamless checkout flow.",
-      techStack: [
-        "React.js",
-        "styled-components",
-        "Intersection Observer",
-        "SEO",
-      ],
+        "Developed a scalable storefront theme using reusable component architecture.",
+      techStack: ["React.js", "Tailwind CSS", "REST APIs"],
       highlights: [
-        "Built mega menu navigation system",
-        "Implemented infinite scroll product listing",
-        "Optimized Core Web Vitals scores",
+        "Improved development speed using reusable architecture",
+        "Built modular UI components",
       ],
     },
     {
       title: "Harvestly Theme",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Theme Development" as const,
+      role: "Frontend Engineer",
+      category: "Theme Development",
       description:
-        "Created an organic/fresh produce themed storefront with category-driven navigation and location-based delivery UI.",
-      techStack: [
-        "React.js",
-        "CSS Modules",
-        "REST APIs",
-        "Responsive Design",
-      ],
+        "Built a modern e-commerce theme with responsive and category-driven UI.",
+      techStack: ["React.js", "CSS", "Responsive Design"],
       highlights: [
-        "Category-driven product navigation",
-        "Location-based delivery slot UI",
-        "Mobile-first responsive design",
+        "Implemented mobile-first responsive layouts",
+        "Optimized UI performance",
+      ],
+    },
+    {
+      title: "Real-time Website Builder",
+      role: "Frontend Engineer",
+      category: "Feature Enhancement",
+      description:
+        "Developed a config-driven website builder with real-time preview and draft/publish workflow.",
+      techStack: ["React.js", "State Management", "REST APIs"],
+      highlights: [
+        "Reduced support effort by 45%",
+        "Built dynamic UI rendering system",
       ],
     },
     {
       title: "Search & Filter System",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Feature Enhancement" as const,
+      role: "Frontend Engineer",
+      category: "Feature Enhancement",
       description:
-        "Implemented a comprehensive search and filtering system across all themes, with debounced search, multi-faceted filters, and URL-synced state.",
-      techStack: ["React.js", "URL State Management", "Debouncing", "REST APIs"],
+        "Built scalable search and filtering system for storefronts.",
+      techStack: ["React.js", "Debouncing", "REST APIs"],
       highlights: [
-        "Debounced search with instant results",
-        "Multi-faceted filter system",
-        "URL-synced filter state for shareability",
+        "Implemented debounced search",
+        "Built multi-filter system",
       ],
     },
     {
       title: "Performance Optimization",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Performance Optimization" as const,
+      role: "Frontend Engineer",
+      category: "Performance Optimization",
       description:
-        "Led performance optimization initiatives across all themes — implementing code splitting, lazy loading, image optimization, and reducing bundle sizes.",
-      techStack: [
-        "Code Splitting",
-        "Lazy Loading",
-        "Intersection Observer",
-        "Web Vitals",
-      ],
+        "Optimized frontend performance using modern techniques.",
+      techStack: ["Lazy Loading", "Code Splitting"],
       highlights: [
-        "Reduced initial bundle size by 40%",
-        "Improved LCP scores across all themes",
-        "Implemented progressive image loading",
+        "Improved load speed by 15%",
+        "Reduced unnecessary re-renders",
       ],
     },
     {
-      title: "Bug Fixes & Support",
-      role: "Frontend Engineer (SDE-1)",
-      category: "Support / Bug Fix" as const,
+      title: "Production Support & Debugging",
+      role: "Frontend Engineer",
+      category: "Support / Bug Fix",
       description:
-        "Resolved critical production bugs, handled cross-browser compatibility issues, and provided ongoing support for merchant-reported issues.",
-      techStack: ["Debugging", "Cross-browser Testing", "Git", "REST APIs"],
+        "Resolved production issues and improved platform stability.",
+      techStack: ["Debugging", "DevTools"],
       highlights: [
-        "Resolved 50+ production bugs",
-        "Improved cross-browser compatibility",
-        "Reduced merchant support tickets by 30%",
+        "Resolved 50+ production issues",
+        "Fixed iOS Safari issues",
       ],
     },
-  ] satisfies ExperienceProject[],
-};
-
-export type InternshipProject = {
-  title: string;
-  description: string;
-  techStack: string[];
-  keyLearning: string;
+  ],
 };
 
 export const internshipData = {
   company: "MountBlue Technologies",
-  role: "Trainee / Intern",
-  duration: "2023 – 2024",
+  role: "Software Engineering Intern",
+  duration: "Aug 2024 – Nov 2024",
   description:
-    "Intensive bootcamp-style internship focused on mastering full-stack web development through project-based learning.",
+    "Worked on frontend and full-stack projects focusing on React and APIs.",
   projects: [
     {
-      title: "E-Commerce Application",
+      title: "UserHub",
       description:
-        "Built a full-featured e-commerce application with product listings, cart management, user authentication, and payment integration.",
-      techStack: ["React.js", "Node.js", "Express", "MongoDB"],
-      keyLearning:
-        "End-to-end application architecture and state management patterns",
+        "Built a full-stack user management system with search and filtering.",
+      techStack: ["React.js", "Redux", "Node.js", "MongoDB"],
+      keyLearning: "Full-stack development and API design",
     },
     {
-      title: "Task Management Dashboard",
+      title: "Trello Clone",
       description:
-        "Created a Trello-inspired task management tool with drag-and-drop, real-time updates, and team collaboration features.",
-      techStack: ["React.js", "Firebase", "CSS Grid", "Drag & Drop API"],
-      keyLearning:
-        "Real-time data synchronization and complex UI interactions",
+        "Developed task management app using React and Redux.",
+      techStack: ["React.js", "Redux"],
+      keyLearning: "State management",
     },
     {
-      title: "Blog Platform",
+      title: "Rest Countries App",
       description:
-        "Developed a blogging platform with markdown support, comment system, user profiles, and SEO optimization.",
-      techStack: ["Next.js", "PostgreSQL", "Tailwind CSS", "Markdown"],
-      keyLearning: "Server-side rendering, SEO best practices, and database design",
+        "Built API-driven React app with filtering and sorting.",
+      techStack: ["React.js", "Tailwind CSS"],
+      keyLearning: "API integration",
     },
-  ] satisfies InternshipProject[],
+  ],
 };
 
-export type PersonalProject = {
-  title: string;
-  description: string;
-  techStack: string[];
-  github: string;
-  live?: string;
-  image?: string;
-  featured?: boolean;
-};
-
-export const personalProjects: PersonalProject[] = [
+export const personalProjects = [
   {
-    title: "Portfolio Website",
+    title: "Personal Portfolio Website",
     description:
-      "A modern, animated portfolio website built with Next.js, Framer Motion, and Tailwind CSS. Features smooth scroll animations, dark/light mode, and config-driven content.",
-    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://yourportfolio.vercel.app",
+      "Modern portfolio built with Next.js, animations, and config-driven UI with feedback system integration.",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    github: "https://github.com/codeask10/portfolio",
+    live: "",
     featured: true,
   },
   {
-    title: "Weather Dashboard",
+    title: "Expense Tracker (Full Stack)",
     description:
-      "A real-time weather dashboard with location search, 7-day forecasts, and interactive charts. Integrates with OpenWeather API.",
-    techStack: ["React.js", "Chart.js", "OpenWeather API", "Tailwind CSS"],
-    github: "https://github.com/yourusername/weather-app",
-    live: "https://weather-app.vercel.app",
+      "Full-stack expense tracker with idempotent APIs, filtering, analytics, and optimized data handling.",
+    techStack: [
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "MongoDB",
+      "React Query",
+    ],
+    github: "https://github.com/codeask10/expense-tracker",
     featured: true,
-  },
-  {
-    title: "URL Shortener",
-    description:
-      "A URL shortener service with custom aliases, click analytics, and QR code generation. Built with a REST API backend.",
-    techStack: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/yourusername/url-shortener",
-    featured: false,
   },
 ];
 
-export type FeatureHighlight = {
-  title: string;
-  description: string;
-  icon: string;
-};
-
-export const featureHighlights: FeatureHighlight[] = [
+export const featureHighlights = [
   {
-    title: "Multi-Tenant E-Commerce Platform",
+    title: "Multi-Tenant Architecture",
     description:
-      "Built and maintained a multi-tenant SaaS platform powering thousands of online stores with shared infrastructure and customizable themes.",
+      "Built scalable frontend supporting 37+ storefronts from a single codebase.",
     icon: "store",
   },
   {
-    title: "Search Optimization System",
+    title: "Website Builder System",
     description:
-      "Designed a performant search system with debounced queries, faceted filtering, and URL-synced state for seamless user experience.",
-    icon: "search",
-  },
-  {
-    title: "Product Grid System",
-    description:
-      "Created a flexible, responsive product grid with infinite scroll, lazy loading, and multiple layout options across all themes.",
-    icon: "grid",
-  },
-  {
-    title: "Admin CMS Integration",
-    description:
-      "Integrated config-driven UI systems allowing merchants to customize their storefront layout, colors, and content without code changes.",
+      "Developed real-time configurable UI system with preview workflow.",
     icon: "settings",
+  },
+  {
+    title: "Performance Optimization",
+    description:
+      "Improved UX and load speed using modern optimization techniques.",
+    icon: "zap",
   },
 ];
 
@@ -311,6 +267,7 @@ export const navItems = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Reviews", href: "#testimonials" },
   { label: "Feedback", href: "#feedback" },
   { label: "Contact", href: "#contact" },
 ];
