@@ -13,25 +13,28 @@ import Testimonials from "@/components/sections/Testimonials";
 import FeedbackForm from "@/components/sections/FeedbackForm";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
+import { ContactModalProvider } from "@/hooks/useContactModal";
 
 export default function Home() {
   return (
-    <div className="noise-overlay">
-      <BackgroundBlobs />
-      <Navbar />
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Internship />
-        <FeatureHighlights />
-        <Projects />
-        <Testimonials />
-        <FeedbackForm />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ContactModalProvider>
+      <div className="noise-overlay">
+        <BackgroundBlobs />
+        <Navbar />
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Internship />
+          <FeatureHighlights />
+          <Projects />
+          <Testimonials />
+          <FeedbackForm />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ContactModalProvider>
   );
 }
